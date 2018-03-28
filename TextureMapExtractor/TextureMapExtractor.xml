@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<executable>
+  <category>CSIM</category>
+  <title>TextureMapExtractor</title>
+  <description><![CDATA[Extracts brain tissue characterizatics based on two images: one original volume and a structure labeled volume defining the ROI. The two images have to be in the same space.]]></description>
+  <version>0.0.1</version>
+  <documentation-url>http://www.example.com/Slicer/Modules/TextureMapExtractor</documentation-url>
+  <license>Slicer</license>
+  <contributor>Fabrício H Simozo (Univeristy of São Paulo)</contributor>
+  <acknowledgements>xxx</acknowledgements>
+  <parameters>
+    <label>IO</label>
+    <description><![CDATA[Input/output parameters]]></description>
+    <image>
+      <name>inputVolume</name>
+      <label>Input Volume</label>
+      <channel>input</channel>
+      <index>0</index>
+      <description><![CDATA[Input original volume]]></description>
+    </image>
+    <image>
+      <name>inputLabels</name>
+      <label>Input Labels</label>
+      <channel>input</channel>
+      <index>1</index>
+      <description><![CDATA[Input labeled volume]]></description>
+    </image>
+  </parameters>
+  <parameters>
+    <label>Controls</label>
+    <description><![CDATA[Control how the module operates]]></description>
+    <directory>
+      <name>dir</name>
+      <label>Output Directory</label>
+      <index>2</index>
+      <description><![CDATA[Directory for output images]]></description>
+    </directory>
+    <string>
+      <name>prefix</name>
+      <label>Output Prefix</label>
+      <index>3</index>
+      <description><![CDATA[Prefix for output images]]></description>
+      <default>image</default>
+    </string>
+    <boolean>
+      <name>doHaralick</name>
+      <flag>-k</flag>
+      <longflag>--doharalick</longflag>
+      <label>Defines if Haralick features are going to be computed</label>
+      <description><![CDATA[DoHaralick]]></description>
+      <default>false</default>
+    </boolean>
+    <boolean>
+      <name>doHistogram</name>
+      <flag>-i</flag>
+      <longflag>--dohistogram</longflag>
+      <label>Defines if histogram features are going to be computed</label>
+      <description><![CDATA[DoHistogram]]></description>
+      <default>false</default>
+    </boolean>
+    <integer-vector>
+      <name>window_size</name>
+      <flag>-s</flag>
+      <longflag>--size</longflag>
+      <label>Defines window size for processing</label>
+      <description><![CDATA[WindowSize]]></description>
+      <default>3,3,3</default>
+  </integer-vector>
+  </parameters>
+</executable>
