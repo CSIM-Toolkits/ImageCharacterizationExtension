@@ -20,6 +20,7 @@ include(${Slicer_USE_FILE})
 #-----------------------------------------------------------------------------
 # Extension modules
 add_subdirectory(TextureMapExtractor)
+add_subdirectory(JointFeatureInformation)
 ## NEXT_MODULE
 
 #-----------------------------------------------------------------------------
